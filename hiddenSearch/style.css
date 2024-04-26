@@ -1,0 +1,57 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-image:linear-gradient(90deg,rgb(136, 114, 156),rgb(146, 178, 184));
+  height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container{
+  height: 50px;
+  position: relative;
+}
+
+.container .search{
+  background-color: #fff;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 50px;
+  transition: width 0.3s ease;
+}
+
+.button{
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.3s ease;
+  top: 0;
+  left: 0;
+}
+
+.search:focus,
+.button:focus{
+  outline: none;
+}
+
+.container.active .search{
+  width: 200px;
+}
+
+.container.active .button{
+  transform: translateX(150px);
+}
+
+
+

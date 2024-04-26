@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+  --left-bg-color:rgba(61, 64, 91, 0.5) ;
+  --right-bg-color:rgba(129, 178, 154,0.5) ;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.container{
+  position: relative;
+  width:100vw;
+  height: 100vh;
+}
+
+.container.hover_left .split.left{
+  width:75%;
+}
+.container.hover_left .split.right{
+  width:25%;
+}
+.container.hover_right .split.left{
+  width:25%;
+}
+.container.hover_right .split.right{
+  width:75%;
+}
+
+
+.container .split{
+  position:absolute;
+  top: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position:top center;
+  background-size: cover;
+  overflow: hidden;
+  transition: width 1000ms ease-in-out;
+}
+
+.container .split.left{
+  left: 0;
+  width: 50%;
+  background-image: url("/css-diner.png");
+}
+
+.container .split.left::before{
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+.container .split.right::before{
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+.container .split.right{
+  right: 0;
+  width: 50%;
+  background-image: url("/flexbox-froggy.png");
+}
+
+h1{
+  position: absolute;
+  top: 20%;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn{
+  padding:1.5rem;
+  width: 15rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  border: 1.5px solid #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.3);
+  transition: all 0.3s ease-in;
+}
+.split.left .btn:hover{
+  background-color: var(--left-bg-color);
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.8)
+}
+
+.split.right .btn:hover{
+  background-color: var(--right-bg-color);
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.8)
+}
+.split.right h1{
+  color: #000;
+}
+
+.split.right .btn{
+  color: #000;
+  border-color: #000;
+}

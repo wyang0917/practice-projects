@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Open+Sans:wght@300&family=Poppins:wght@100;200&display=swap');
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Edu TAS Beginner',cursive,sans-serif;
+  font-size: 30px;
+}
+
+.container{
+  display: flex;
+  width: 90vw;
+}
+
+.panel{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 80vh;
+  flex: 0.5;
+  border-radius: 50px;
+  color: #fff;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+} 
+
+.panel h3{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3{
+  opacity: 0.8;
+  transition:opacity 0.4s ease-in 0.4s;
+}
+
+@media(max-width:480px){
+  .container{
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),.panel:nth-of-type(5){
+    display: none;
+  }
+}
